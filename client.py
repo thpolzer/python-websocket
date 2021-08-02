@@ -1,5 +1,6 @@
 import websockets
 import asyncio
+import json
 
 # connects to the server and handles its response
 async def listen():
@@ -10,6 +11,8 @@ async def listen():
         while True:
             msg = await ws.recv()
             print(msg)
+            await asyncio.sleep(5)
+            data = json.loads(msg)
+            print(data["root"][0]["fx"])
 
 asyncio.get_event_loop().run_until_complete(listen())
-print("Scheisse")
