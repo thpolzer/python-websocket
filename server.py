@@ -18,10 +18,7 @@ print("Server listening on Port " + str(PORT))
 
 
 async def echo(websocket, path):
-    print("A client just connected")
-    #async for message in websocket:
-    #    print("Received message from client: " + message)
-    #    await websocket.send("Pong: " + message)
+    print("client connected")
     while True:
         data["root"][0]["fx"] = {"EUR":1+rand.random(), "GBP":1+rand.random()}
         data["root"][0]["al"] = {"EUR":1-rand.random(), "GBP":1-rand.random()}
